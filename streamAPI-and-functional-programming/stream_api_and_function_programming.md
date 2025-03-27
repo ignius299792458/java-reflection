@@ -12,9 +12,7 @@
 
 **`Stream API`** lets you process collections of data in a pipeline style, focusing on what you want to do rather than how to do it: `streams` and `parallelStreams`
 
-# In-Depth Understanding at JVM and Machine Level
-
-## Functional Interfaces & Lambda Expressions
+# Functional Interfaces & Lambda Expressions
 
 ### How It Works:
 
@@ -26,13 +24,13 @@ Runnable r = () -> System.out.println("Hello");
 
 At the JVM level, several things happen:
 
-1. **Bytecode Generation**: The Java compiler doesn't create a separate class file for the lambda. Instead, it generates a special method called a "lambda factory" within your class.
+1. **`Bytecode Generation`**: The Java compiler doesn't create a separate class file for the lambda. Instead, it generates a special method called a "**`lambda factory`**" within your class.
 
-2. **Invokedynamic**: The compiler uses the `invokedynamic` instruction, introduced in Java 7, to delay the decision on how to implement the lambda until runtime.
+2. **`Invokedynamic`**: The compiler uses the **invokedynamic** instruction, introduced in Java 7, to delay the decision on how to implement the lambda until runtime.
 
-3. **Lambda Metafactory**: At runtime, the JVM calls `LambdaMetafactory.metafactory()` which dynamically creates an implementation of the functional interface.
+3. **`Lambda Metafactory`**: At runtime, the JVM calls `LambdaMetafactory.metafactory()` which dynamically creates an implementation of the functional interface.
 
-4. **Implementation Options**: Depending on the situation, the JVM might:
+4. **`Implementation Options`**: Depending on the situation, the JVM might:
    - Create a new anonymous class instance (similar to pre-Java 8)
    - Use a method handle directly
    - Generate a specialized class dynamically
@@ -50,7 +48,7 @@ At the machine level:
 - The JVM uses method handles (direct pointers to methods) for efficient invocation
 - No anonymous class instances are created per iteration, reducing memory overhead
 
-## Method References
+# Method References
 
 Method references like `System.out::println` are even more efficient than lambdas:
 
@@ -58,7 +56,7 @@ Method references like `System.out::println` are even more efficient than lambda
 2. **No Intermediate Code**: No wrapper code is needed
 3. **Potential Inlining**: The JIT compiler may inline these calls for better performance
 
-## Stream API
+# Stream API
 
 ### Architecture:
 
