@@ -1,16 +1,16 @@
 # Stream API and Functional Programming in Java
 
-## Simple Introduction
+## Simple Introduction (Most Imp)
 
-**`Functional Programming: `** in `Java lets you treat functions as values` that **can be passed around, similar to how you pass variables**. This makes code more concise and often easier to understand.
+1. **`Functional Programming: `** in `Java lets you treat functions as values` that **can be passed around, similar to how you pass variables**. This makes code more concise and often easier to understand.
 
-**`Lambda Expressions: `** are like `mini-functions you can write directly in your code without naming them`. Think of them as shorthand methods.
+2. **`Lambda Expressions: `** are like `mini-functions you can write directly in your code without naming them`. Think of them as shorthand methods.
 
-**`Method References`** are even shorter ways to refer to methods that already exist.
+3. **`Method References`** are even shorter ways to refer to methods that already exist.
 
-**`Functional Interfaces`** are special interfaces with exactly one abstract method, which makes them compatible with lambdas.
+4. **`Functional Interfaces`** are special interfaces with exactly one abstract method, which makes them compatible with lambdas.
 
-**`Stream API`** lets you process collections of data in a pipeline style, focusing on what you want to do rather than how to do it: `streams` and `parallelStreams`
+5. **`Stream API`** lets you process collections of data in a pipeline style, focusing on what you want to do rather than how to do it: `streams` and `parallelStreams`
 
 # Functional Interfaces & Lambda Expressions
 
@@ -68,20 +68,20 @@ The Stream API consists of:
 
 ### Machine-Level Implementation:
 
-1. **Lazy Evaluation**:
+1. **`Lazy Evaluation`**:
 
    - Intermediate operations only build a recipe
    - No computation happens until a terminal operation is called
    - This allows the JVM to optimize the entire pipeline
 
-2. **Spliterator Mechanism**:
+2. **`Spliterator` Mechanism**:
 
    - Splits collections for parallel processing
    - Handles the complexity of dividing work
 
-3. **Fork/Join Framework**:
-   - For parallel streams, the work is distributed across the ForkJoinPool
-   - Uses a work-stealing algorithm where idle threads can take tasks from busy ones
+3. **`Fork/Join` Framework**:
+   - For parallel streams, the work is distributed across the `ForkJoinPool`
+   - Uses a `work-stealing algorithm` where idle threads can take tasks from busy ones
 
 ### Memory Optimization:
 
