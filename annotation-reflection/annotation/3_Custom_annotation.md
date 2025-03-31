@@ -93,5 +93,3 @@ public class AnnotationProcessor {
 1. **Repeatable annotations**: Same annotation multiple times on one element
 2. **Inheritance**: Whether annotations are passed to subclasses
 3. **Type annotations**: Annotations on any use of a type (Java 8+)
-
-That's custom annotations in Java! They're a powerful way to extend Java's capabilities without changing its core language.
